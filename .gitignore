@@ -3,3 +3,5 @@ node_modules
 src/build
 package-lock.json
 dist/
+.env
+postgres_data

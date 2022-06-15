@@ -5,9 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --respawn src/server.ts",
-    "pre-build": "tsc",
     "start": "node dist/server",
-    "build": "npm run pre-build && npm run copy-config",
+    "build": "tsc -b",
     "server": "nodemon server"
   },
   "devDependencies": {

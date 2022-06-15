@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  db: 
+    image: postgres:alpine
+    env_file:
+      .env
+    volumes:
+      - ./postgres_data:/var/lib/postgresq/data
+    ports:
+      - '5432:5432'
+  backend:
+    build: ./backend
+    depends_on:
+      - db
+    deploy:
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+    volumes:
+      - ./backend:/backend
+    env_file: 
+      - .env
+  
+volumes:
+  postgres_data:
