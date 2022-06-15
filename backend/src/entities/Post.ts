@@ -1,20 +1,22 @@
 import { Entity, PrimaryKey, Property } from "@mikro-orm/core";
 
 @Entity()
-export class Post {
+class Post {
   @PrimaryKey()
-  _id!: string;
+    _id!: string;
 
   @Property()
-  title!: string;
+    title!: string;
 
   @Property({ type: "date" })
-  createdAt = new Date();
+    createdAt = new Date();
 
-  @Property({ type: "date",onUpdate: () => new Date() })
-  updatedAt = new Date();
+  @Property({ type: "date", onUpdate: () => new Date() })
+    updatedAt = new Date();
 
   constructor(title: string) {
     this.title = title;
   }
 }
+
+export default Post;
