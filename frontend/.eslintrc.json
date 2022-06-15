@@ -1,0 +1,58 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "eslint:recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "react/require-default-props": "off",
+    "semi": ["warn", "always"],
+    "quotes": ["warn", "double"],
+    "no-console": "off",
+    "react/function-component-definition": "off",
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "arrow-body-style": "off",
+    "import/extensions": [
+      "off",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".ts", ".tsx", ".js", ".jsx"] }
+    ],
+    "import/no-cycle": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-param-reassign": "off",
+    "no-useless-catch": "off",
+    "array-callback-return": "off",
+    "typescript-eslint/no-unused-expressions": "off",
+    "react/destructuring-assignment": "off",
+    "prefer-destructuring": "off",
+    "no-case-declarations": "off",
+    "react/no-children-prop": "off",
+    "spaced-comment": [0, "never"],
+    "import/no-unresolved": "off"
+  }
+}

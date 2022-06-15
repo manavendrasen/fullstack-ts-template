@@ -5,8 +5,10 @@
   "author": "Manavendra Sen <manavendra4288@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "cd backend && yarn dev",
-    "dev:backend": "cd backend && yarn dev"
+    "dev": "docker-compose -f docker-compose.dev.yml up",
+    "dev:build": "docker-compose -f docker-compose.dev.yml up --build",
+    "prod": "docker-compose -f docker-compose.prod.yml up",
+    "prod:build": "docker-compose -f docker-compose.prod.yml up --build"
   },
   "devDependencies": {
     "concurrently": "^7.0.0"

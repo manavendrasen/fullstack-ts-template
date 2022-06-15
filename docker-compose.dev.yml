@@ -29,6 +29,20 @@ services:
       - ./backend:/backend
     networks:
       - app-network
+  frontend:
+    container_name: web
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    ports: 
+      - '3000:3000'
+    depends_on:
+      - db
+      - backend
+    volumes:
+      - ./frontend:/frontend
+    networks:
+      - app-network
   
 volumes:
   postgres_data:
