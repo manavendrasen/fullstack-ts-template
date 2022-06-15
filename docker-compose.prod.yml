@@ -21,10 +21,10 @@ services:
       - '5000:5000'
     depends_on:
       - db
-    # deploy:
-    #   restart_policy:
-    #     condition: on-failure
-    #     max_attempts: 3
+    deploy:
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
     volumes:
       - ./backend:/backend
     networks:
