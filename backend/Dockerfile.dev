@@ -1,0 +1,8 @@
+FROM node:alpine
+WORKDIR /backend
+COPY package*.json ./
+COPY yarn.lock ./
+RUN yarn
+COPY . .
+EXPOSE 5000
+CMD ["yarn", "dev"]

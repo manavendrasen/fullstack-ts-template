@@ -7,7 +7,11 @@
     "dev": "ts-node-dev --respawn src/server.ts",
     "start": "node dist/server",
     "build": "tsc -b",
-    "server": "nodemon server"
+    "server": "nodemon server",
+    "docker-dev": "docker-compose -f docker-compose.dev.yml up",
+    "docker-dev:build": "docker-compose -f docker-compose.dev.yml up --build",
+    "docker-prod": "docker-compose -f docker-compose.prod.yml up",
+    "docker-prod:build": "docker-compose -f docker-compose.prod.yml up --build"
   },
   "devDependencies": {
     "@types/node": "^17.0.23",

@@ -14,7 +14,9 @@ services:
       - app-network
   backend:
     container_name: server
-    build: ./backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.prod
     ports: 
       - '5000:5000'
     depends_on:

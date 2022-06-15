@@ -13,8 +13,9 @@ const main = async () => {
 	const app = express();
 
 	app.get("/", (_, res) => {
-		res.send({
-			status: "connected"
+		res.status(200)
+			.send({
+			status: "connected successfully"
 		})
 	})
 
