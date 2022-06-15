@@ -1,7 +1,8 @@
 version: '3'
 
 services:
-  db: 
+  db:
+    container_name: database
     image: postgres:alpine
     env_file:
       .env
@@ -9,18 +10,27 @@ services:
       - ./postgres_data:/var/lib/postgresq/data
     ports:
       - '5432:5432'
+    networks:
+      - app-network
   backend:
+    container_name: server
     build: ./backend
+    ports: 
+      - '5000:5000'
     depends_on:
       - db
-    deploy:
-      restart_policy:
-        condition: on-failure
-        max_attempts: 3
+    # deploy:
+    #   restart_policy:
+    #     condition: on-failure
+    #     max_attempts: 3
     volumes:
       - ./backend:/backend
-    env_file: 
-      - .env
+    networks:
+      - app-network
   
 volumes:
   postgres_data:
+
+networks:
+  app-network:
+    driver: bridge

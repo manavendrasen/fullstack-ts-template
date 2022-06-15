@@ -1,23 +1,11 @@
-FROM node:alpine as builder
+FROM node:alpine
 WORKDIR /backend
-
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
 COPY package.json ./
 COPY yarn.lock ./
-
 RUN yarn
-
 COPY . .
+COPY .env .env
 RUN yarn build
-
-FROM node
-WORKDIR /backend
-COPY package*.json ./
-RUN npm install --omit=dev
-
-COPY --from=builder /backend/dist ./dist
-
+ENV NODE_ENV production
 EXPOSE 5000
-CMD node dist/src/index.js
+CMD [ "yarn", "start" ]
