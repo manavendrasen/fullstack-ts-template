@@ -15,6 +15,9 @@
     "quotes": ["warn", "double"],
     "no-console": "off",
     "import/no-unresolved": "off",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "comma-dangle": "off",
+    "no-unused-vars": "off",
+    "object-curly-newline": "off"
   }
 }
