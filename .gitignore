@@ -5,3 +5,4 @@ package-lock.json
 dist/
 .env
 postgres_data
+.vscode
